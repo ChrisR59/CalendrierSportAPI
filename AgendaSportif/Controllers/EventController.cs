@@ -42,14 +42,13 @@ namespace AgendaSportif.Controllers
         [HttpPost]
         public ActionResult Post([FromBody] Event events)
         {
-            //Enregistrement d'un entré
-            Event e = data.Events.Last();
-            events.Id = e.Id;
+            //fonctionne
+
             data.Events.Add(events);
 
             if (data.SaveChanges() > 0)
             {
-                return Ok(new { error = false, EventId = e.Id });
+                return Ok(new { error = false });
             }
             else
             {
