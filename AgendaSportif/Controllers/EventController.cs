@@ -29,6 +29,14 @@ namespace AgendaSportif.Controllers
             return Ok(data.Events.ToList());
         }
 
+        // GET: api/EventSearch
+        [Route("/GetSearch/{search}")]
+        [HttpGet]
+        public ActionResult GetSearch(string search)
+        {//fonctionne
+            return Ok(data.Events.Where(t => t.Title.Contains(search)));
+        }
+
         // GET: api/Event/5
         [Route("/GetByMonth")]
         [HttpGet("{date}", Name = "Get")]
