@@ -32,6 +32,11 @@ namespace AgendaSportif
                 cors.AddPolicy("AllowAll", o =>
                 {
                     o.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader();
+                }); 
+                
+                cors.AddPolicy("LimitToOneOrigin", o =>
+                {
+                    o.WithOrigins("192.168.1.11").AllowAnyHeader().AllowAnyMethod();
                 });
             });
         }
@@ -43,6 +48,10 @@ namespace AgendaSportif
             {
                 app.UseDeveloperExceptionPage();
             }
+            app.UseCors(options => {
+                //Toute origine et toute methode et tout entete
+                options.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader();
+            });
 
             app.UseRouting();
 
