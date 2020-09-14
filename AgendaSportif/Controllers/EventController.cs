@@ -7,6 +7,8 @@ using AgendaSportif.Tools;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System.Text.Json;
+
 
 namespace AgendaSportif.Controllers
 {
@@ -29,20 +31,12 @@ namespace AgendaSportif.Controllers
             return Ok(data.Events.ToList());
         }
 
-        // GET: api/EventSearch
+        // POST: api/EventSearch
         [Route("/GetSearch/{search}")]
-        [HttpGet]
+        [HttpPost]
         public ActionResult GetSearch(string search)
         {//fonctionne
             return Ok(data.Events.Where(t => t.Title.Contains(search)));
-        }
-
-        // GET: api/Event/5
-        [Route("/GetByMonth")]
-        [HttpGet("{date}", Name = "Get")]
-        public ActionResult GetMonth(DateTime date)
-        {
-            return Ok(data.Events.Where(d => d.DateEvent > date || d.DateEvent < date));
         }
 
         // POST: api/Event

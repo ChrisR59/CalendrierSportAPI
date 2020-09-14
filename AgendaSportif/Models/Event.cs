@@ -9,10 +9,10 @@ namespace AgendaSportif.Models
     {
         private int id;
         private string title;
-        private DateTime dateEvent;
+        private string start;
 
         public int Id { get => id; set => id = value; }
         public string Title { get => title; set => title = value; }
-        public DateTime DateEvent { get => dateEvent; set => dateEvent = value; }
+        public string Start { get => start; set => start = value; }
     }
 }

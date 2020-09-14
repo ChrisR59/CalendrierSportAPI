@@ -11,10 +11,7 @@ namespace AgendaSportif.Tools
     {
 
         public DataDbContext() :base()
-        {
-
-        }
-
+        {   }
 
         public DbSet<Event> Events { get; set; }
 
