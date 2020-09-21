@@ -58,6 +58,32 @@ namespace AgendaSportif.Controllers
             }
         }
 
+        //PUT : api/EditDate/5
+        [Route("/EditDate/{id}")]
+        [HttpPut]
+        public ActionResult Put([FromBody] Event e)
+        {
+            Event e2 = data.Events.Find(e.Id);
+            if (e2 != null)
+            {
+                e2.Id = (e.Id != null) ? e.Id : e2.Id;
+                e2.Title = (e.Title != null) ? e.Title : e2.Title;
+                e2.Start = (e.Start != null) ? e.Start : e2.Start;
+                if (data.SaveChanges() >= 1)
+                {
+                    return Ok(new { message = "Event modifié", error = false, EventId = e.Id });
+                }
+                else
+                {
+                    return Ok(new { message = "erreur serveur", error = true });
+                }
+            }
+            else
+            {
+                return NotFound();
+            }
+        }
+
         // DELETE: api/ApiWithActions/5
         [Route("/Delete/{id}")]
         [HttpDelete]
