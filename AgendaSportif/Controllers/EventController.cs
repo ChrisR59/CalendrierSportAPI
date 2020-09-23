@@ -27,7 +27,7 @@ namespace AgendaSportif.Controllers
         [Route("/GetAll")]
         [HttpGet]
         public ActionResult GetAll()
-        {//Fonctionne
+        {
             return Ok(data.Events.ToList());
         }
 
@@ -35,7 +35,7 @@ namespace AgendaSportif.Controllers
         [Route("/GetSearch/{search}")]
         [HttpPost]
         public ActionResult GetSearch(string search)
-        {//fonctionne
+        {
             return Ok(data.Events.Where(t => t.Title.Contains(search)));
         }
 
@@ -44,18 +44,12 @@ namespace AgendaSportif.Controllers
         [HttpPost]
         public ActionResult Post([FromBody] Event events)
         {
-            //fonctionne
-
             data.Events.Add(events);
 
             if (data.SaveChanges() > 0)
-            {
                 return Ok(new { error = false });
-            }
             else
-            {
                 return StatusCode(500);
-            }
         }
 
         //PUT : api/EditDate/5
@@ -66,29 +60,24 @@ namespace AgendaSportif.Controllers
             Event e2 = data.Events.Find(e.Id);
             if (e2 != null)
             {
-                e2.Id = (e.Id != null) ? e.Id : e2.Id;
+                e2.Id = (e.Id != 0) ? e.Id : e2.Id;
                 e2.Title = (e.Title != null) ? e.Title : e2.Title;
                 e2.Start = (e.Start != null) ? e.Start : e2.Start;
+
                 if (data.SaveChanges() >= 1)
-                {
                     return Ok(new { message = "Event modifié", error = false, EventId = e.Id });
-                }
                 else
-                {
                     return Ok(new { message = "erreur serveur", error = true });
-                }
             }
             else
-            {
                 return NotFound();
-            }
         }
 
         // DELETE: api/ApiWithActions/5
         [Route("/Delete/{id}")]
         [HttpDelete]
         public ActionResult Delete(int id)
-        {//Fonctionne
+        {
             Event e = data.Events.Find(id);
 
             if (e != null)
