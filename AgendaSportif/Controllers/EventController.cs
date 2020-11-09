@@ -47,7 +47,7 @@ namespace AgendaSportif.Controllers
             data.Events.Add(events);
 
             if (data.SaveChanges() > 0)
-                return Ok(new { error = false });
+                return Ok(new { TitleEvent = events.Title , error = false });
             else
                 return StatusCode(500);
         }
