@@ -62,6 +62,7 @@ namespace AgendaSportif.Controllers
             {
                 e2.Id = (e.Id != 0) ? e.Id : e2.Id;
                 e2.Title = (e.Title != null) ? e.Title : e2.Title;
+                e2.Type = (e.Type != null) ? e.Type : e2.Type;
                 e2.Start = (e.Start != null) ? e.Start : e2.Start;
                 e2.End = (e.End != null) ? e.End : e2.End;
 
