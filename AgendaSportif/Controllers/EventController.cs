@@ -75,19 +75,23 @@ namespace AgendaSportif.Controllers
                 return NotFound();
         }
 
+        /**
+         * Return a title of the event
+         */
         // DELETE: api/ApiWithActions/5
         [Route("/Delete/{id}")]
         [HttpDelete]
         public ActionResult Delete(int id)
         {
             Event e = data.Events.Find(id);
+            string title = e.Title;
 
             if (e != null)
             {
                 data.Events.Remove(e);
 
                 if (data.SaveChanges() >= 1)
-                    return Ok(new { error = false, EventId = id, message = "element supprimé" });
+                    return Ok(new { error = false, Title = title});
                 else
                     return StatusCode(500);
             }
