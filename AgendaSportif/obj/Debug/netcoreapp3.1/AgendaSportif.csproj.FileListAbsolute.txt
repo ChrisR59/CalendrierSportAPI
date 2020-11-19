@@ -1,6 +1,5 @@
 C:\Users\nocti\source\repos\AgendaSportif\AgendaSportif\bin\Debug\netcoreapp3.1\appsettings.Development.json
 C:\Users\nocti\source\repos\AgendaSportif\AgendaSportif\bin\Debug\netcoreapp3.1\appsettings.json
-C:\Users\nocti\source\repos\AgendaSportif\AgendaSportif\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
 C:\Users\nocti\source\repos\AgendaSportif\AgendaSportif\bin\Debug\netcoreapp3.1\AgendaSportif.exe
 C:\Users\nocti\source\repos\AgendaSportif\AgendaSportif\bin\Debug\netcoreapp3.1\AgendaSportif.deps.json
 C:\Users\nocti\source\repos\AgendaSportif\AgendaSportif\bin\Debug\netcoreapp3.1\AgendaSportif.runtimeconfig.json
@@ -110,3 +109,4 @@ C:\Users\nocti\source\repos\AgendaSportif\AgendaSportif\obj\Debug\netcoreapp3.1\
 C:\Users\nocti\source\repos\AgendaSportif\AgendaSportif\obj\Debug\netcoreapp3.1\AgendaSportif.dll
 C:\Users\nocti\source\repos\AgendaSportif\AgendaSportif\obj\Debug\netcoreapp3.1\AgendaSportif.pdb
 C:\Users\nocti\source\repos\AgendaSportif\AgendaSportif\obj\Debug\netcoreapp3.1\AgendaSportif.genruntimeconfig.cache
+C:\Users\nocti\source\repos\AgendaSportif\AgendaSportif\obj\Debug\netcoreapp3.1\scopedcss\bundle\AgendaSportif.styles.css

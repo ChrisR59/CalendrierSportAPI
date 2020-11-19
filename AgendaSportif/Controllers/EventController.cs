@@ -36,7 +36,7 @@ namespace AgendaSportif.Controllers
         [HttpPost]
         public ActionResult GetSearch(string search)
         {
-            return Ok(data.Events.Where(t => t.Title.Contains(search)));
+            return Ok(data.Events.Where(t => t.Title.Contains(search) || t.Type.Contains(search)));
         }
 
         // POST: api/Event

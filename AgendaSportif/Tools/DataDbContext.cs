@@ -14,6 +14,7 @@ namespace AgendaSportif.Tools
         {   }
 
         public DbSet<Event> Events { get; set; }
+        public DbSet<TypeEvent> TypeEvent { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
