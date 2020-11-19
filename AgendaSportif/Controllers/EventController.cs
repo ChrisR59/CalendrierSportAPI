@@ -67,7 +67,7 @@ namespace AgendaSportif.Controllers
                 e2.End = (e.End != null) ? e.End : e2.End;
 
                 if (data.SaveChanges() >= 1)
-                    return Ok(new { message = "Event modifié", error = false, EventId = e.Id });
+                    return Ok(new { message = "Event modifié", error = false, TitleEvent = e2.Title });
                 else
                     return Ok(new { message = "erreur serveur", error = true });
             }
