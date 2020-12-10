@@ -10,9 +10,10 @@ namespace AgendaSportif.Tools
     public class DataDbContext : DbContext
     {
 
-        public DataDbContext() :base()
-        {   }
+        public DataDbContext() : base()
+        { }
 
+        public DbSet<Members> Member { get; set; }
         public DbSet<Event> Events { get; set; }
         public DbSet<TypeEvent> TypeEvent { get; set; }
 
